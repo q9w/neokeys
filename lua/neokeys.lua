@@ -4,6 +4,7 @@
 -- Source: https://github.com/q9w/neokeys
 
 local function setup()
+    -- window keys
     vim.api.nvim_set_keymap('', 'wh', "<C-W>h", {noremap = true, silent = true})
     vim.api.nvim_set_keymap('', 'wl', "<C-W>l", {noremap = true, silent = true})
     vim.api.nvim_set_keymap('', 'wj', "<C-W>j", {noremap = true, silent = true})
@@ -17,6 +18,7 @@ local function setup()
     vim.api.nvim_set_keymap('', 'wd', ":resize -5<CR>", {noremap = true, silent = true})
     vim.api.nvim_set_keymap('', 'wi', "<C-W>=", {noremap = true, silent = true})
 
+    -- floaterm keys
     vim.api.nvim_set_keymap('', 'wf', ":FloatermFirst<CR>", {noremap = true, silent = true})
     vim.api.nvim_set_keymap('t', 'wf', "<C-\\><C-n>:FloatermFirst<CR>", {noremap = true, silent = true})
     vim.api.nvim_set_keymap('', 'wn', ":FloatermNext<CR>", {noremap = true, silent = true})
@@ -33,6 +35,16 @@ local function setup()
     vim.api.nvim_set_keymap('t', 'wx', "<C-\\><C-n>:FloatermKill<CR>", {noremap = true, silent = true})
     vim.api.nvim_set_keymap('', 'wz', ":FloatermLast<CR>", {noremap = true, silent = true})
     vim.api.nvim_set_keymap('t', 'wz', "<C-\\><C-n>:FloatermLast<CR>", {noremap = true, silent = true})
+
+    -- buffer keys
+    vim.api.nvim_set_keymap('', 'bb', "<cmd>:BufferLinePick<CR>", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap('', 'bd', "<cmd>:bd<CR>", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap('', 'bf', "<cmd>:BufferLineSortByDirectory<CR>", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap('', 'be', "<cmd>:BufferLineSortByExtension<CR>", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap('', 'bh', "<cmd>:BufferLineMovePrev<CR>", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap('', 'bl', "<cmd>:BufferLineMoveNext<CR>", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap('', 'bn', "<cmd>:BufferLineCycleNext<CR>", {noremap = true, silent = true})
+    vim.api.nvim_set_keymap('', 'bp', "<cmd>:BufferLineCyclePrev<CR>", {noremap = true, silent = true})
 end
 
 return {
