@@ -8,6 +8,35 @@ local function setup()
         nowait = true, noremap = true, silent = true
     }
 
+    -- Set leader
+    vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', opts)
+    vim.g.mapleader = ' '
+
+    -- telescope
+    vim.api.nvim_set_keymap('n', '<Leader><Space>', ':Telescope oldfiles<CR>', opts)
+
+    -- copy all
+    vim.api.nvim_set_keymap('n', '<Leader>a', ':%+y<CR>', opts)
+
+    -- back to buffer
+    vim.api.nvim_set_keymap('n', '<Leader>b', '<cmd>:BufferLinePick<CR>', opts)
+
+    -- commend
+    vim.api.nvim_set_keymap('n', '<Leader>c', '<cmd>lua require("commented").toggle_comment("n")<CR>', opts)
+    vim.api.nvim_set_keymap('v', '<Leader>c', '<cmd>lua require("commented").toggle_comment("v")<CR>', opts)
+
+    -- dashboard
+    vim.api.nvim_set_keymap('n', '<Leader>d', ':Dashboard<CR>', opts)
+
+    -- explorer
+    vim.api.nvim_set_keymap('n', '<Leader>e', '<cmd>NvimTreeToggle<CR>', opts)
+
+    -- no hl
+    vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', opts)
+
+    -- write
+    vim.api.nvim_set_keymap('', '<Leader>w', '<cmd>w<CR>', opts)
+
     -- buffer keys
     vim.api.nvim_set_keymap('', 'bb', "<cmd>:BufferLinePick<CR>", opts)
     vim.api.nvim_set_keymap('', 'bd', "<cmd>:bd<CR>", opts)
@@ -16,13 +45,15 @@ local function setup()
     vim.api.nvim_set_keymap('', 'bh', "<cmd>:BufferLineMovePrev<CR>", opts)
     vim.api.nvim_set_keymap('', 'bl', "<cmd>:BufferLineMoveNext<CR>", opts)
     vim.api.nvim_set_keymap('', 'bn', "<cmd>:BufferLineCycleNext<CR>", opts)
+    vim.api.nvim_set_keymap('', 'bo', "<cmd>:e #<cr>", opts)
     vim.api.nvim_set_keymap('', 'bp', "<cmd>:BufferLineCyclePrev<CR>", opts)
+
+    -- e keys
+    vim.api.nvim_set_keymap('', 'ee', "<cmd>NvimTreeToggle<cr>", opts)
 
     -- floaterm keys
     vim.api.nvim_set_keymap('', 'wf', ":FloatermFirst<CR>", opts)
     vim.api.nvim_set_keymap('t', 'wf', "<C-\\><C-n>:FloatermFirst<CR>", opts)
-    vim.api.nvim_set_keymap('', 'wn', ":FloatermNext<CR>", opts)
-    vim.api.nvim_set_keymap('t', 'wn', "<C-\\><C-n>:FloatermNext<CR>", opts)
     vim.api.nvim_set_keymap('', 'wn', ":FloatermNext<CR>", opts)
     vim.api.nvim_set_keymap('t', 'wn', "<C-\\><C-n>:FloatermNext<CR>", opts)
     vim.api.nvim_set_keymap('', 'wo', ":FloatermNew<CR>", opts)
@@ -62,6 +93,7 @@ local function setup()
     vim.api.nvim_set_keymap('', 'sw', "<cmd>Telescope lsp_workspace_diagnostics<cr>", opts)
 
     -- window keys
+    vim.api.nvim_set_keymap('', 'ww', "<C-W>p", opts)
     vim.api.nvim_set_keymap('', 'wh', "<C-W>h", opts)
     vim.api.nvim_set_keymap('', 'wl', "<C-W>l", opts)
     vim.api.nvim_set_keymap('', 'wj', "<C-W>j", opts)
@@ -79,6 +111,7 @@ local function setup()
     vim.api.nvim_set_keymap('', 'x', "<NOP>", opts)
     vim.api.nvim_set_keymap('', 'xx', "<Delete>", opts)
     vim.api.nvim_set_keymap('', 'xr', "<C-r>", opts)
+    vim.api.nvim_set_keymap('!', 'xr', "<C-r>", opts)
     vim.api.nvim_set_keymap('', 'xo', "<C-o>", opts)
     vim.api.nvim_set_keymap('', 'xi', "<C-i>", opts)
     vim.api.nvim_set_keymap('', 'xf', "<C-f>", opts)
@@ -90,13 +123,18 @@ local function setup()
     vim.api.nvim_set_keymap('', 'zz', "<cmd>lua require'zen-mode'.toggle()<cr>", opts)
 
     -- special keys
-    vim.api.nvim_set_keymap('', 'U', "<C-r>", opts)
-    vim.api.nvim_set_keymap('', 'ww', ":w<CR>", opts)
-    vim.api.nvim_set_keymap('', 'wq', "ZZ", opts)
     vim.api.nvim_set_keymap('!', 'jk', "<ESC>", opts)
+    vim.api.nvim_set_keymap('', 'jk', "<ESC>", opts)
+
+    vim.api.nvim_set_keymap('!', ';a', "<ESC>A", opts)
+
+    vim.api.nvim_set_keymap('', 'xh', "<LEFT>", opts)
+    vim.api.nvim_set_keymap('', 'xl', "<RIGHT>", opts)
     vim.api.nvim_set_keymap('!', 'xh', "<LEFT>", opts)
     vim.api.nvim_set_keymap('!', 'xl', "<RIGHT>", opts)
-    vim.api.nvim_set_keymap('!', ';a', "<ESC>A", opts)
+
+    vim.api.nvim_set_keymap('', 'U', "<C-r>", opts)
+    vim.api.nvim_set_keymap('', 'wq', "ZZ", opts)
 end
 
 return {
