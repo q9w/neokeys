@@ -38,14 +38,14 @@ local function setup()
     vim.api.nvim_set_keymap('', '<Leader>w', '<cmd>w<CR>', opts)
 
     -- buffer keys
-    vim.api.nvim_set_keymap('', 'bb', "<cmd>:BufferLinePick<CR>", opts)
+    vim.api.nvim_set_keymap('', 'bb', "<cmd>:e #<cr>", opts)
     vim.api.nvim_set_keymap('', 'bd', "<cmd>:bd<CR>", opts)
-    vim.api.nvim_set_keymap('', 'bf', "<cmd>:BufferLineSortByDirectory<CR>", opts)
     vim.api.nvim_set_keymap('', 'be', "<cmd>:BufferLineSortByExtension<CR>", opts)
+    vim.api.nvim_set_keymap('', 'bf', "<cmd>:BufferLineSortByDirectory<CR>", opts)
+    vim.api.nvim_set_keymap('', 'bg', "<cmd>:BufferLinePick<CR>", opts)
     vim.api.nvim_set_keymap('', 'bh', "<cmd>:BufferLineMovePrev<CR>", opts)
     vim.api.nvim_set_keymap('', 'bl', "<cmd>:BufferLineMoveNext<CR>", opts)
     vim.api.nvim_set_keymap('', 'bn', "<cmd>:BufferLineCycleNext<CR>", opts)
-    vim.api.nvim_set_keymap('', 'bo', "<cmd>:e #<cr>", opts)
     vim.api.nvim_set_keymap('', 'bp', "<cmd>:BufferLineCyclePrev<CR>", opts)
 
     -- e keys
