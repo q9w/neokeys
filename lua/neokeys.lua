@@ -34,6 +34,9 @@ local function setup()
     -- no hl
     vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', opts)
 
+    -- quit
+    vim.api.nvim_set_keymap('', '<Leader>q', '<cmd>qa<CR>', opts)
+
     -- write
     vim.api.nvim_set_keymap('', '<Leader>w', '<cmd>w<CR>', opts)
 
@@ -42,8 +45,9 @@ local function setup()
     vim.api.nvim_set_keymap('', 'bd', "<cmd>:bd<CR>", opts)
     vim.api.nvim_set_keymap('', 'be', "<cmd>:BufferLineSortByExtension<CR>", opts)
     vim.api.nvim_set_keymap('', 'bf', "<cmd>:BufferLineSortByDirectory<CR>", opts)
-    vim.api.nvim_set_keymap('', 'bg', "<cmd>:BufferLinePick<CR>", opts)
     vim.api.nvim_set_keymap('', 'bh', "<cmd>:BufferLineMovePrev<CR>", opts)
+    vim.api.nvim_set_keymap('', 'bj', "<cmd>:BufferLinePick<CR>", opts)
+    vim.api.nvim_set_keymap('', 'bk', "<cmd>:BufferLinePick<CR>", opts)
     vim.api.nvim_set_keymap('', 'bl', "<cmd>:BufferLineMoveNext<CR>", opts)
     vim.api.nvim_set_keymap('', 'bn', "<cmd>:BufferLineCycleNext<CR>", opts)
     vim.api.nvim_set_keymap('', 'bp', "<cmd>:BufferLineCyclePrev<CR>", opts)
@@ -78,19 +82,26 @@ local function setup()
     vim.api.nvim_set_keymap('', 'jb', "<cmd>:AnyJumpBack<CR>", opts)
     vim.api.nvim_set_keymap('', 'jl', "<cmd>:AnyJumpLastResults<CR>", opts)
 
+    -- Snap keys
+    vim.api.nvim_set_keymap('', 'sb', "<cmd>SnapBuffers<cr>", opts)
+    vim.api.nvim_set_keymap('', 'sf', "<cmd>SnapFiles<cr>", opts)
+    vim.api.nvim_set_keymap('', 'sg', "<cmd>SnapGrep<cr>", opts)
+    vim.api.nvim_set_keymap('', 'so', "<cmd>SnapOldFiles<cr>", opts)
+    vim.api.nvim_set_keymap('', 'ss', "<cmd>SnapGrepSelectedWord<cr>", opts)
+
     -- Telescope keys
-    vim.api.nvim_set_keymap('', 'sb', "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
-    vim.api.nvim_set_keymap('', 'sc', "<cmd>Telescope colorscheme<cr>", opts)
-    vim.api.nvim_set_keymap('', 'sd', "<cmd>Telescope lsp_document_diagnostics<cr>", opts)
-    vim.api.nvim_set_keymap('', 'sf', "<cmd>Telescope find_files<cr>", opts)
-    vim.api.nvim_set_keymap('', 'sg', "<cmd>Telescope live_grep<cr>", opts)
-    vim.api.nvim_set_keymap('', 'sh', "<cmd>Telescope command_history<cr>", opts)
-    vim.api.nvim_set_keymap('', 'sm', "<cmd>Telescope marks<cr>", opts)
-    vim.api.nvim_set_keymap('', 'so', "<cmd>Telescope oldfiles<cr>", opts)
-    vim.api.nvim_set_keymap('', 'sp', "<cmd>Telescope man_pages<cr>", opts)
-    vim.api.nvim_set_keymap('', 'sr', "<cmd>Telescope registers<cr>", opts)
-    vim.api.nvim_set_keymap('', 'sR', "<cmd>lua require('spectre').open()<CR>", opts)
-    vim.api.nvim_set_keymap('', 'sw', "<cmd>Telescope lsp_workspace_diagnostics<cr>", opts)
+    vim.api.nvim_set_keymap('', 'eb', "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
+    vim.api.nvim_set_keymap('', 'ec', "<cmd>Telescope colorscheme<cr>", opts)
+    vim.api.nvim_set_keymap('', 'ed', "<cmd>Telescope lsp_document_diagnostics<cr>", opts)
+    vim.api.nvim_set_keymap('', 'ef', "<cmd>Telescope find_files<cr>", opts)
+    vim.api.nvim_set_keymap('', 'eg', "<cmd>Telescope live_grep<cr>", opts)
+    vim.api.nvim_set_keymap('', 'eh', "<cmd>Telescope command_history<cr>", opts)
+    vim.api.nvim_set_keymap('', 'em', "<cmd>Telescope marks<cr>", opts)
+    vim.api.nvim_set_keymap('', 'eo', "<cmd>Telescope oldfiles<cr>", opts)
+    vim.api.nvim_set_keymap('', 'ep', "<cmd>Telescope man_pages<cr>", opts)
+    vim.api.nvim_set_keymap('', 'er', "<cmd>Telescope registers<cr>", opts)
+    vim.api.nvim_set_keymap('', 'eR', "<cmd>lua require('spectre').open()<CR>", opts)
+    vim.api.nvim_set_keymap('', 'ew', "<cmd>Telescope lsp_workspace_diagnostics<cr>", opts)
 
     -- window keys
     vim.api.nvim_set_keymap('', 'ww', "<C-W>p", opts)
