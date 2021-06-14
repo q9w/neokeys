@@ -74,6 +74,7 @@ local function setup()
     -- neohop keys
     vim.api.nvim_set_keymap('', 'h', "<cmd>lua require'hop'.hint_words()<cr>", opts)
     vim.api.nvim_set_keymap('', 's', "<cmd>lua require'hop'.hint_char2()<cr>", opts)
+    vim.api.nvim_set_keymap('', 'S', "<cmd>lua require'hop'.hint_char1()<cr>", opts)
     vim.api.nvim_set_keymap('', 'l', "<cmd>lua require'hop'.hint_lines()<cr>", opts)
 
     -- jump keys
@@ -88,6 +89,8 @@ local function setup()
     vim.api.nvim_set_keymap('', 'sg', "<cmd>SnapGrep<cr>", opts)
     vim.api.nvim_set_keymap('', 'so', "<cmd>SnapOldFiles<cr>", opts)
     vim.api.nvim_set_keymap('', 'ss', "<cmd>SnapGrepSelectedWord<cr>", opts)
+
+    vim.api.nvim_set_keymap('', 'sp', "<cmd>Spectre<cr>", opts)
 
     -- Telescope keys
     vim.api.nvim_set_keymap('', 'eb', "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
