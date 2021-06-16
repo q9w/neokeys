@@ -22,8 +22,8 @@ local function setup()
     vim.api.nvim_set_keymap('n', '<Leader>b', '<cmd>:BufferLinePick<CR>', opts)
 
     -- commend
-    vim.api.nvim_set_keymap('n', '<Leader>c', '<cmd>lua require("commented").toggle_comment("n")<CR>', opts)
-    vim.api.nvim_set_keymap('v', '<Leader>c', '<cmd>lua require("commented").toggle_comment("v")<CR>', opts)
+    vim.api.nvim_set_keymap('n', '<Leader>c', '<Plug>kommentary_motion_default', opts)
+    vim.api.nvim_set_keymap('v', '<Leader>c', '<Plug>kommentary_visual_default', opts)
 
     -- dashboard
     vim.api.nvim_set_keymap('n', '<Leader>d', ':Dashboard<CR>', opts)
