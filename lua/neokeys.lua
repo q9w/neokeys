@@ -22,8 +22,7 @@ local function setup()
     vim.api.nvim_set_keymap('n', '<Leader>b', '<cmd>:BufferLinePick<CR>', opts)
 
     -- commend
-    vim.api.nvim_set_keymap('n', '<Leader>c', '<Plug>kommentary_motion_default', opts)
-    vim.api.nvim_set_keymap('v', '<Leader>c', '<Plug>kommentary_visual_default', opts)
+    vim.api.nvim_set_keymap('n', '<Leader>c', '<Plug>kommentary_line_default', opts)
 
     -- dashboard
     vim.api.nvim_set_keymap('n', '<Leader>d', ':Dashboard<CR>', opts)
@@ -139,6 +138,9 @@ local function setup()
     -- special keys
     vim.api.nvim_set_keymap('!', 'jk', "<ESC>", opts)
     vim.api.nvim_set_keymap('', 'jk', "<ESC>", opts)
+
+    vim.api.nvim_set_keymap('', 'H', "^", opts)
+    vim.api.nvim_set_keymap('', 'L', "$", opts)
 
     vim.api.nvim_set_keymap('!', ';a', "<ESC>A", opts)
 
