@@ -22,7 +22,7 @@ local function setup()
     vim.api.nvim_set_keymap('n', '<Leader>b', '<cmd>:BufferLinePick<CR>', opts)
 
     -- commend
-    vim.api.nvim_set_keymap('n', '<Leader>c', '<Plug>kommentary_line_default', opts)
+    -- vim.api.nvim_set_keymap('n', '<Leader>c', '<Plug>kommentary_line_default', opts)
 
     -- dashboard
     vim.api.nvim_set_keymap('n', '<Leader>d', ':Dashboard<CR>', opts)
@@ -72,8 +72,8 @@ local function setup()
 
     -- neohop keys
     vim.api.nvim_set_keymap('', 'h', "<cmd>lua require'hop'.hint_words()<cr>", opts)
-    vim.api.nvim_set_keymap('', 's', "<cmd>lua require'hop'.hint_char2()<cr>", opts)
-    vim.api.nvim_set_keymap('', 'S', "<cmd>lua require'hop'.hint_char1()<cr>", opts)
+    --[[ vim.api.nvim_set_keymap('', 's', "<cmd>lua require'hop'.hint_char2()<cr>", opts)
+    vim.api.nvim_set_keymap('', 'S', "<cmd>lua require'hop'.hint_char1()<cr>", opts) ]]
     vim.api.nvim_set_keymap('', 'l', "<cmd>lua require'hop'.hint_lines()<cr>", opts)
 
     -- jump keys
