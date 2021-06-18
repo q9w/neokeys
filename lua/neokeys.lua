@@ -71,8 +71,8 @@ local function setup()
     vim.api.nvim_set_keymap('t', 'wz', "<C-\\><C-n>:FloatermLast<CR>", opts)
 
     --lightspeed keys
-    vim.api.nvim_set_keymap('n', ';', 's<CR>', opts)
-    vim.api.nvim_set_keymap('n', ',', 'S<CR>', opts)
+    vim.api.nvim_set_keymap('n', ';', '<Plug>Lightspeed_s<enter>', {})
+    vim.api.nvim_set_keymap('n', ',', '<Plug>Lightspeed_S<enter>', {})
 
     -- neohop keys
     vim.api.nvim_set_keymap('', 'h', "<cmd>lua require'hop'.hint_words()<cr>", opts)
